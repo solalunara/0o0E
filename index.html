@@ -18,13 +18,19 @@
         <div style="margin-top: 10px;">
             Allow 3 Seconds To Process
         </div>
+        <div style="margin-top: 10px;">
+            Please Write In All Lowercase Save For The First Letter
+        </div>
         <div style="margin-top: 150px;">
             <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
         </div>
         <button style="margin-top: 50px;" onclick="rojf()">submit</button>
         <a id="downloadLink" style="display: none;">Download Next Clue</a>
         <div id="error" style="display: none;">
-            Please Write In All Lowercase Save For The First Letter
+            Not A Valid Key - Please Refresh And Try Again With Another Passkey
+        </div>
+        <div id="error_case" style="display: none;">
+            Make Sure You Are Writing In All Lowercase Save For The First Letter
         </div>
 
         <!--
@@ -62,12 +68,6 @@
                         decryptText( file1, code.toLowerCase(), "0o0E.exe" );
                         break;
 
-                    case -1045766907:
-                    case -1992437499:
-                    case 67575:
-                    case 99351:
-                        document.getElementById( 'error' ).sytle.display = 'block';
-                        break;
 
                     case 1972518454:
                         decryptText( file2, code.toLowerCase(), "0o0E.wav" );
@@ -80,6 +80,16 @@
                     case -1395524392:
                         window.location.href = CryptoJS.AES.decrypt( 'U2FsdGVkX19Ifpsfz0y1j7TJXt2E1zlylscHEWd3lq3EArfOnrROy90WFF8YqObv', code.toLowerCase() ).toString(CryptoJS.enc.Utf8);
                         break;
+
+                    case -1045766907:
+                    case -1992437499:
+                    case 67575:
+                    case 99351:
+                        document.getElementById( 'error_case' ).style.display = 'block';
+                    default:
+                        document.getElementById( 'error' ).sytle.display = 'block';
+                    break;
+
                 }
             }
 
