@@ -25,7 +25,7 @@
             <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
         </div>
         <button style="margin-top: 50px;" onclick="rojf()">submit</button>
-        <a id="downloadLink" style="display: none;">Download Next Clue</a>
+        <a id="downloadLink" style="display: none;" onclick="removeurl()">Download Next Clue</a>
         <div id="error" style="display: none; margin-top: 30px;">
             Not A Valid Key - Please Refresh And Try Again With Another Passkey
         </div>
@@ -93,6 +93,10 @@
                 }
             }
 
+            function removeurl() {
+                window.URL.revokeObjectURL( document.getElementById( 'downloadlink' ).href );
+            }
+
             function decryptFile( file, key ) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
@@ -119,7 +123,6 @@
                 downloadLink.href = url;
                 downloadLink.download = name;
                 downloadLink.style.display = 'block';
-                window.URL.revokeObjectURL( url );
             }
 
             function convertWordArrayToUint8Array(wordArray) {
