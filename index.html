@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>0o0E</title>
+    </head>
+    <body style="text-align:center; background-color:#826021;">
+        <h2>Enter the password:</h2>
+        <div style="margin-top: 30px;">
+            Only One At Once
+        </div>
+        <div style="margin-top: 10px;">
+            Refresh Page Between Each Clue
+        </div>
+        <div style="margin-top: 30px;">
+            Please Be Patient After Clicking Submit
+        </div>
+        <div style="margin-top: 10px;">
+            Allow 3 Seconds To Process
+        </div>
+        <div style="margin-top: 150px;">
+            <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
+        </div>
+        <button style="margin-top: 50px;" onclick="rojf()">submit</button>
+        <a id="downloadLink" style="display: none;">Download Next Clue</a>
+        <div id="error" style="display: none;">
+            Please Write In All Lowercase Save For The First Letter
+        </div>
+
+        <!--
+            You've come to the right place
+            passkey: Nibiru
+        -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+        <script>
+
+            async function rojf() {
+                String.prototype.hashCode = function() {
+                    var hash = 0, i, chr;
+                    if (this.length === 0) return hash;
+                    for (i = 0; i < this.length; i++) {
+                        chr = this.charCodeAt(i);
+                        hash = ((hash << 5) - hash) + chr;
+                        hash |= 0;
+                    }
+                    return hash;
+                }
+
+                var code = document.getElementById( 'code' ).value;
+                var file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
+                var file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
+                var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
+                var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
+                switch ( code.hashCode() )
+                {
+                    case -1961899739:
+                        decryptText( file0, code.toLowerCase(), "0o0E.mp3" );
+                        break;
+
+                    case 68599:
+                        decryptText( file1, code.toLowerCase(), "0o0E.exe" );
+                        break;
+
+                    case -1045766907:
+                    case -1992437499:
+                    case 67575:
+                    case 99351:
+                        document.getElementById( 'error' ).sytle.display = 'block';
+                        break;
+
+                    case -1406316010:
+                        decryptText( file2, code.toLowerCase(), "0o0E.wav" );
+                        break;
+
+                    case -1091913576:
+                        decryptText( file3, code.toLowerCase(), "0o0E.ogg" );
+                        break;
+                    
+                    case 1234789624:
+                        window.location.href = CryptoJS.AES.decrypt( 'U2FsdGVkX19Ifpsfz0y1j7TJXt2E1zlylscHEWd3lq3EArfOnrROy90WFF8YqObv', code.toLowerCase() ).toString(CryptoJS.enc.Utf8);
+                        break;
+                }
+            }
+
+            function decryptFile( file, key ) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const fileContent = event.target.result;
+
+                    const decryptedData = new Blob( [convertWordArrayToUint8Array( CryptoJS.AES.decrypt(fileContent, key) )] );
+
+                    const downloadLink = document.getElementById('downloadLink');
+                    var url = window.URL.createObjectURL(decryptedData);
+                    downloadLink.href = url;
+                    downloadLink.download = file.name.replace(/\.[^/.]+$/, "");
+                    downloadLink.style.display = 'block';
+                    window.URL.revokeObjectURL( url );
+                };
+                reader.readAsText(file, 'utf-8');
+            }
+            function decryptText( text, key, name ) {
+                const fileContent = text;
+
+                const decryptedData = new Blob( [convertWordArrayToUint8Array( CryptoJS.AES.decrypt(fileContent, key) )] );
+
+                const downloadLink = document.getElementById('downloadLink');
+                var url = window.URL.createObjectURL(decryptedData);
+                downloadLink.href = url;
+                downloadLink.download = name;
+                downloadLink.style.display = 'block';
+                window.URL.revokeObjectURL( url );
+            }
+
+            function convertWordArrayToUint8Array(wordArray) {
+                var arrayOfWords = wordArray.hasOwnProperty("words") ? wordArray.words : [];
+                var length = wordArray.hasOwnProperty("sigBytes") ? wordArray.sigBytes : arrayOfWords.length * 4;
+                var uInt8Array = new Uint8Array(length), index=0, word, i;
+                for (i=0; i<length; i++) {
+                    word = arrayOfWords[i];
+                    uInt8Array[index++] = word >> 24;
+                    uInt8Array[index++] = (word >> 16) & 0xff;
+                    uInt8Array[index++] = (word >> 8) & 0xff;
+                    uInt8Array[index++] = word & 0xff;
+                }
+                return uInt8Array;
+            }
+
+        </script>
+    </body>
+
+</html>
