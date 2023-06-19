@@ -59,7 +59,9 @@
                 var code = document.getElementById( 'code' ).value;
                 var file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
                 var file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
+                var _file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp4.enc" )).text()
                 var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
+                var _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
                 var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
                 switch ( code.hashCode() )
                 {
@@ -71,10 +73,19 @@
                         decryptText( file1, code.toLowerCase(), "0o0E.exe" );
                         break;
 
-
                     case 1972518454:
                         decryptText( file2, code.toLowerCase(), "0o0E.wav" );
                         break;
+
+
+                    case -955725401:
+                        decryptText( _file1, code.toLowerCase(), "0o0E.mp4" );
+                        break;
+
+                    case -1993889503:
+                        decryptText( _file2, code.toLowerCase(), "0o0E.flac" );
+                        break;
+
 
                     case -2008046408:
                         decryptText( file3, code.toLowerCase(), "0o0E.ogg" );
@@ -88,6 +99,8 @@
                     case -1992437499:
                     case 67575:
                     case 99351:
+                    case 1335273927:
+                    case -173098585:
                         document.getElementById( 'caseerror' ).style.display = 'block';
                     default:
                         document.getElementById( 'error' ).style.display = 'block';
