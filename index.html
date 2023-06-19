@@ -26,10 +26,10 @@
         </div>
         <button style="margin-top: 50px;" onclick="rojf()">submit</button>
         <a id="downloadLink" style="display: none;">Download Next Clue</a>
-        <div id="error" style="display: none;">
+        <div id="error" style="display: none; margin-top: 30px;">
             Not A Valid Key - Please Refresh And Try Again With Another Passkey
         </div>
-        <div id="error_case" style="display: none;">
+        <div id="caseerror" style="display: none; margin-top: 30px;">
             Make Sure You Are Writing In All Lowercase Save For The First Letter
         </div>
 
@@ -85,9 +85,9 @@
                     case -1992437499:
                     case 67575:
                     case 99351:
-                        document.getElementById( 'error_case' ).style.display = 'block';
+                        document.getElementById( 'caseerror' ).style.display = 'block';
                     default:
-                        document.getElementById( 'error' ).sytle.display = 'block';
+                        document.getElementById( 'error' ).style.display = 'block';
                     break;
 
                 }
