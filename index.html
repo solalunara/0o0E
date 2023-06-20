@@ -24,7 +24,7 @@
         <button style="margin-top: 30px;" onclick="rojf()">submit</button>
         <a id="downloadLink" style="display: none; margin-top: 30px" onclick="removeurl()">Download Next Clue</a>
         <div id="error" style="display: none; margin-top: 30px;">
-            Not A Valid Key - Please Refresh And Try Again With Another Passkey
+            Not A Valid Key - Please Try Again With Another Passkey
         </div>
 
         <!-- You've come to the right place -->
@@ -52,6 +52,7 @@
 
             function rojf() {
                 document.getElementById( 'error' ).style.display = 'none';
+                document.getElementById( 'downloadLink' ).style.display = 'none';
 
                 String.prototype.hashCode = function() {
                     var hash = 0, i, chr;
