@@ -4,16 +4,10 @@
     <head>
         <title>0o0E</title>
     </head>
-    <body style="text-align:center; background-color:#826021;">
+    <body style="text-align:center; background-color:#826021;" onload="LoadResources()">
         <h2>Enter the password:</h2>
         <div style="margin-top: 30px;">
             Only One At Once
-        </div>
-        <div style="margin-top: 10px;">
-            Please Be Patient After Clicking Submit
-        </div>
-        <div style="margin-top: 10px;">
-            Correct Answers Take 3-5 Seconds To Process
         </div>
         <div style="margin-top: 30px;">
             Please Write In All Lowercase Save For The First Letter
@@ -45,7 +39,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script>
 
-            async function rojf() {
+            async function LoadResources() {
+                var file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
+                var file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
+                var _file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp4.enc" )).text()
+                var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
+                var _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
+                var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
+            }
+
+            function rojf() {
                 document.getElementById( 'caseerror' ).style.display = 'none';
                 document.getElementById( 'error' ).style.display = 'none';
 
@@ -61,12 +64,6 @@
                 }
 
                 var code = document.getElementById( 'code' ).value;
-                var file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
-                var file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
-                var _file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp4.enc" )).text()
-                var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
-                var _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
-                var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
                 switch ( code.hashCode() )
                 {
                     case -1961899739:
