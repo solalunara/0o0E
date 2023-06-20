@@ -10,9 +10,6 @@
             Only One At Once
         </div>
         <div style="margin-top: 30px;">
-            Please Write In All Lowercase Save For The First Letter
-        </div>
-        <div style="margin-top: 30px;">
             All Neccesary Information To Solve Is Available Within The Clues And This Website
         </div>
         <div style="margin-top: 10px;">
@@ -29,9 +26,6 @@
         <div id="error" style="display: none; margin-top: 30px;">
             Not A Valid Key - Please Refresh And Try Again With Another Passkey
         </div>
-        <div id="caseerror" style="display: none; margin-top: 10px;">
-            Make Sure You Are Writing In All Lowercase Save For The First Letter
-        </div>
 
         <!-- You've come to the right place -->
         <!-- passkey: Nibiru -->
@@ -46,10 +40,10 @@
                 var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
                 var _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
                 var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
+                var file4 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.html.enc" )).text()
             }
 
             function rojf() {
-                document.getElementById( 'caseerror' ).style.display = 'none';
                 document.getElementById( 'error' ).style.display = 'none';
 
                 String.prototype.hashCode = function() {
@@ -67,46 +61,48 @@
                 switch ( code.hashCode() )
                 {
                     case -1961899739:
+                    case -1045766907:
+                    case -1992437499:
                         decryptText( file0, code.toLowerCase(), "0o0E.mp3" );
                         break;
 
                     case 68599:
+                    case 67575:
+                    case 99351:
                         decryptText( file1, code.toLowerCase(), "0o0E.exe" );
                         break;
 
                     case 1972518454:
+                    case 1941980694:
+                    case -1406316010:
                         decryptText( file2, code.toLowerCase(), "0o0E.wav" );
                         break;
 
 
+                    case 1335273927:
+                    case -173098585:
                     case -955725401:
                         decryptText( _file1, code.toLowerCase(), "0o0E.mp4" );
                         break;
 
                     case -1993889503:
+                    case -2024427263:
+                    case -1077756671:
                         decryptText( _file2, code.toLowerCase(), "0o0E.flac" );
                         break;
 
-
+                    case -2038584168:
                     case -2008046408:
+                    case -1091913576:
                         decryptText( file3, code.toLowerCase(), "0o0E.ogg" );
                         break;
                     
                     case -1395524392:
-                        window.location.href = CryptoJS.AES.decrypt( 'U2FsdGVkX19Ifpsfz0y1j7TJXt2E1zlylscHEWd3lq3EArfOnrROy90WFF8YqObv', code.toLowerCase() ).toString(CryptoJS.enc.Utf8);
-                        break;
-                    
-                    case 2225343:
-                        window.location.href = CryptoJS.AES.decrypt( 'U2FsdGVkX1/nnLwyTK9zGXWy8lLa+5j8Kqqqxkg0yVy9PawZQQxbHI4td+IurKKE', code.toLowerCase() ).toString(CryptoJS.enc.Utf8);
+                    case 1234789624:
+                    case 1952772312:
+                        decryptText( file4, code.toLowerCase(), "0o0E.html" )
                         break;
 
-                    case -1045766907:
-                    case -1992437499:
-                    case 67575:
-                    case 99351:
-                    case 1335273927:
-                    case -173098585:
-                        document.getElementById( 'caseerror' ).style.display = 'block';
                     default:
                         document.getElementById( 'error' ).style.display = 'block';
                     break;
