@@ -10,15 +10,12 @@
             Only One At Once
         </div>
         <div style="margin-top: 10px;">
-            Refresh Page Between Each Clue
-        </div>
-        <div style="margin-top: 30px;">
             Please Be Patient After Clicking Submit
         </div>
         <div style="margin-top: 10px;">
-            Allow 3 Seconds To Process
+            Correct Answers Take 3-5 Seconds To Process
         </div>
-        <div style="margin-top: 10px;">
+        <div style="margin-top: 30px;">
             Please Write In All Lowercase Save For The First Letter
         </div>
         <div style="margin-top: 30px;">
@@ -30,27 +27,28 @@
         <div style="margin-top: 10px;">
             Provided VLC Media Player And Audacity Are Installed
         </div>
-        <div style="margin-top: 100px;">
+        <div style="margin-top: 50px;">
             <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
         </div>
-        <button style="margin-top: 50px;" onclick="rojf()">submit</button>
-        <a id="downloadLink" style="display: none;" onclick="removeurl()">Download Next Clue</a>
+        <button style="margin-top: 30px;" onclick="rojf()">submit</button>
+        <a id="downloadLink" style="display: none; margin-top: 30px" onclick="removeurl()">Download Next Clue</a>
         <div id="error" style="display: none; margin-top: 30px;">
             Not A Valid Key - Please Refresh And Try Again With Another Passkey
         </div>
-        <div id="caseerror" style="display: none; margin-top: 30px;">
+        <div id="caseerror" style="display: none; margin-top: 10px;">
             Make Sure You Are Writing In All Lowercase Save For The First Letter
         </div>
 
-        <!--
-            You've come to the right place
-            passkey: Nibiru
-        -->
+        <!-- You've come to the right place -->
+        <!-- passkey: Nibiru -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script>
 
             async function rojf() {
+                document.getElementById( 'caseerror' ).style.display = 'none';
+                document.getElementById( 'error' ).style.display = 'none';
+
                 String.prototype.hashCode = function() {
                     var hash = 0, i, chr;
                     if (this.length === 0) return hash;
@@ -120,7 +118,9 @@
             }
 
             function removeurl() {
-                window.URL.revokeObjectURL( document.getElementById( 'downloadlink' ).href );
+                var DownloadLink = document.getElementById( 'downloadLink' );
+                window.URL.revokeObjectURL( DownloadLink.href );
+                DownloadLink.style.display = 'none';
             }
 
             function decryptFile( file, key ) {
