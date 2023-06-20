@@ -33,14 +33,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script>
 
+            var file0;
+            var file1;
+            var _file1;
+            var file2;
+            var _file2;
+            var file3;
+            var file4; 
             async function LoadResources() {
-                var file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
-                var file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
-                var _file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp4.enc" )).text()
-                var file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
-                var _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
-                var file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
-                var file4 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.html.enc" )).text()
+                file0 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp3.enc" )).text()
+                file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.exe.enc" )).text()
+                _file1 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.mp4.enc" )).text()
+                file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
+                _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
+                file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
+                file4 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.html.enc" )).text()
             }
 
             function rojf() {
