@@ -10,13 +10,13 @@
             Only One At Once
         </div>
         <div style="margin-top: 30px;">
-            All Neccesary Information To Solve Is Available Within The Clues And This Website
+            All neccesary information to solve is available within the clues and this website
         </div>
         <div style="margin-top: 10px;">
-            And The Puzzle Is Solveable On All Platforms
+            And the puzzle is solveable on all platforms
         </div>
         <div style="margin-top: 10px;">
-            Provided VLC Media Player And Audacity Are Installed
+            Provided VLC Media Player and Audacity (or equivalent audio/visual interpreters) are installed
         </div>
         <div style="margin-top: 50px;">
             <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
@@ -143,6 +143,10 @@
             }
             function decryptText( text, key, name ) {
                 const fileContent = text;
+
+                //cannot use simple string decryption
+                //  CryptoJS.AES.decrypt( fileContent, key ).toString( CryptoJS.enc.Utf8 )
+                //as we work with binary files often (e.g. mp3 files) and the computer has no way to validate those
 
                 const decryptedData = new Blob( [convertWordArrayToUint8Array( CryptoJS.AES.decrypt(fileContent, key) )] );
 
