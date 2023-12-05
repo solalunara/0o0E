@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 
     <head>
         <title>0o0E</title>
     </head>
-    <body style="text-align:center; background-color:#826021;" onload="LoadResources()">
+    <body style="text-align:center;
+      background-image: -webkit-linear-gradient(top, #826021 0%, #49330a 100%);
+      background-image: -moz-linear-gradient(top, #826021 0%, #49330a 100%);
+      background-image: -ms-linear-gradient(top, #826021 0%, #49330a 100%);
+      background-image: -o-linear-gradient(top, #826021 0%, #49330a 100%);
+      background-image: linear-gradient(top, #826021 0%, #49330a 100%);"
+      onload="LoadResources()">
         <h2>Enter the password:</h2>
         <div style="margin-top: 30px;">
             Only One At Once
@@ -12,14 +18,17 @@
         <div style="margin-top: 30px;">
             All neccesary information to solve is available within the clues and this website
         </div>
-        <div style="margin-top: 10px;">
-            And the puzzle is solveable on all platforms
+        <div style="margin-top: 5px;">
+            and the puzzle is solveable on all platforms (execution of .exe files is optional)
         </div>
-        <div style="margin-top: 10px;">
-            Provided VLC Media Player and Audacity (or equivalent audio/visual interpreters) are installed
+        <div style="margin-top: 5px;">
+            provided VLC Media Player and Audacity (or equivalent audio/visual interpreters) are installed
+        </div>
+        <div style="margin-top: 30px;">
+            You can attempt to solve the puzzle through <i>any means neccesary</i>. All potential exploits have been deemed sufficiently challenging.
         </div>
         <div style="margin-top: 50px;">
-            <textarea rows=1 cols=20 style="resize:none; text-align: center;" id="code"></textarea>
+            <textarea rows=1 cols=20 onkeydown="checkkey( event )" onclick="removeurl()" style="resize:none; text-align: center;" id="code"></textarea>
         </div>
         <button style="margin-top: 30px;" onclick="rojf()">submit</button>
         <a id="downloadLink" style="display: none; margin-top: 30px">Download Next Clue</a>
@@ -32,6 +41,13 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script>
+
+            function checkkey( event ) {
+                if ( event.key === 'Enter' ) {
+                    event.preventDefault();
+                    rojf();
+                }
+            }
 
             var file0;
             var file1;
@@ -51,8 +67,6 @@
             }
 
             function rojf() {
-                document.getElementById( 'error' ).style.display = 'none';
-                document.getElementById( 'downloadLink' ).style.display = 'none';
                 removeurl();
 
                 String.prototype.hashCode = function() {
@@ -120,6 +134,7 @@
             }
 
             function removeurl() {
+                document.getElementById( 'error' ).style.display = 'none';
                 var DownloadLink = document.getElementById( 'downloadLink' );
                 window.URL.revokeObjectURL( DownloadLink.href );
                 DownloadLink.style.display = 'none';
