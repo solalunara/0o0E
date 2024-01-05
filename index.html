@@ -23,10 +23,10 @@
             except for one clue where a star map may be useful - such clue will be obvious
         </div>
         <div style="margin-top: 30px;">
-            and the puzzle is solveable on all platforms (execution of .exe files is optional)
+            and the puzzle is solveable on all platforms (execution of .exe file is optional)
         </div>
         <div style="margin-top: 5px;">
-            provided VLC Media Player and Audacity (or equivalent audio/visual interpreters) are installed
+            provided VLC Media Player, Audacity, and GIMP (or equivalent audio/visual interpreters) are installed
         </div>
         <div style="margin-top: 30px;">
             You can attempt to solve the puzzle through <i>any means neccesary</i>. All potential exploits have been deemed sufficiently challenging.
@@ -67,6 +67,7 @@
                 file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.wav.enc" )).text()
                 _file2 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.flac.enc" )).text()
                 file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.ogg.enc" )).text()
+                _file3 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.png.enc" )).text()
                 file4 = await (await fetch( "https://solalunara.github.io/0o0E/0o0E.html.enc" )).text()
             }
 
@@ -128,6 +129,12 @@
                     case -2024427263:
                     case -1077756671:
                         decryptText( _file2, code.toLowerCase(), "0o0E.flac" );
+                        break;
+
+                    case -135761730:
+                    case -71117602:
+                    case 646865086:
+                        decryptText( _file3, code.toLowerCase(), "0o0E.wav" );
                         break;
 
                     case -2038584168:
