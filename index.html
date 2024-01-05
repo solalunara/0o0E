@@ -87,6 +87,18 @@
                 var code = document.getElementById( 'code' ).value;
                 switch ( code.hashCode() )
                 {
+                    case 1216985755:
+                    case 1281629883:
+                    case 1999612571:
+                    case 729336170:
+                    case 893656458:
+                    case 958300586:
+                    case 1042649482:
+                        if ( code.length == 8 )
+                            code = 'the ' + code;
+                        window.location.href = CryptoJS.AES.decrypt( 'U2FsdGVkX1/kuESPwJyQ35n5zyaGZTxcIt7GhrlD9tkL/tY6jLKCamTq+eEoHg/CD9kHClcIAdVPMBeDBDdZ5EZHkkLfJsLgFR5AWxs96WE=', code.toLowerCase() ).toString( CryptoJS.enc.Utf8 );
+                        break;
+
                     case -1961899739:
                     case -1045766907:
                     case -1992437499:
