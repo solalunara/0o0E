@@ -1,53 +1,117 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
 
     <head>
         <title>0o0E</title>
         <meta name="google-site-verification" content="TDnQ2StFQkviSIuzy4d4htuS1m455T_HTGB2lJjkgYw" />
     </head>
-    <body style="text-align:center;
-      background-image: -webkit-linear-gradient(top, #826021 0%, #49330a 100%);
-      background-image: -moz-linear-gradient(top, #826021 0%, #49330a 100%);
-      background-image: -ms-linear-gradient(top, #826021 0%, #49330a 100%);
-      background-image: -o-linear-gradient(top, #826021 0%, #49330a 100%);
-      background-image: linear-gradient(top, #826021 0%, #49330a 100%);"
-      onload="LoadResources()">
+    <body onload="LoadResources()">
         <h2>Enter the password:</h2>
-        <div style="margin-top: 30px;">
-            Only One At Once
-        </div>
-        <div style="margin-top: 30px;">
-            All neccesary information to solve is available within the clues and this website
-        </div>
-        <div style="margin-top: 5px;">
-            except for one clue where a star map may be useful - such clue will be obvious
-        </div>
-        <div style="margin-top: 30px;">
-            and the puzzle is solveable on all platforms (execution of .exe file is optional)
-        </div>
-        <div style="margin-top: 5px;">
-            provided VLC Media Player, Audacity, and GIMP (or equivalent audio/visual interpreters) are installed
-        </div>
-        <div style="margin-top: 30px;">
-            You can attempt to solve the puzzle through <i>any means neccesary</i>. All potential exploits have been deemed sufficiently challenging.
-        </div>
-        <div style="margin-top: 50px;">
-            <textarea rows=1 cols=20 onkeydown="checkkey( event )" onclick="removeurl()" style="resize:none; text-align: center;" id="code"></textarea>
-        </div>
-        <button style="margin-top: 30px;" onclick="rojf()">submit</button>
+        <div class="smalldiv"> Only One At Once </div>
+
+        <div class="smalldiv"> All neccesary information to solve is available within the clues and this website
+                                except for one clue where a star map may be useful - such clue will be obvious </div>
+
+        <div class="smalldiv"> and the puzzle is solveable on all platforms (execution of .exe file is optional)
+                                provided VLC Media Player, Audacity, and GIMP (or equivalent audio/visual interpreters) are installed </div>
+
+        <div class="smalldiv"> You can attempt to solve the puzzle through <i>any means neccesary</i>. All potential exploits have been deemed sufficiently challenging. </div>
+
+        <textarea class="largediv child" rows=1 cols=20 onkeydown="checkkey( event )" onclick="removeurl()" style="resize:none; text-align: center;" id="code"></textarea>
+
+        <button class="smalldiv child" onclick="rojf()">submit</button>
+
         <a id="downloadLink" style="display: none; margin-top: 30px">Download Next Clue</a>
-        <div id="error" style="display: none; margin-top: 30px;">
-            Not A Valid Key - Please Try Again With Another Passkey
-        </div>
-        <div style="margin-top: 200px;" id="localbutton">
-            <button onclick="local()">For running locally, click here</button>
-        </div>
-        <div style="margin-top: 200px;color:#ffffff; display:none" id="localdiv">
-            For running locally, input encrypted files here: <input type="file" id="fileInput" accept=".enc" multiple="true">
-        </div>
+
+        <div id="error" style="display: none; margin-top: 30px;"> Not A Valid Key - Please Try Again With Another Passkey </div>
+
+        <button class="smallbutton footer" id="localbutton" onclick="local()">For running locally, click here</button>
+
+        <div class="footer" style="display:none" id="localdiv"> For running locally, input encrypted files here: <input type="file" id="fileInput" accept=".enc" multiple="true"> </div>
 
         <!-- You've come to the right place -->
         <!-- passkey: Nibiru -->
+
+        <style>
+            body {
+                display: block;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                background-image: -webkit-linear-gradient(top, #beb1a8 0%, #3680a7 100%);
+                background-image: -moz-linear-gradient(top, #beb1a8 0%, #3680a7 100%);
+                background-image: -ms-linear-gradient(top, #beb1a8 0%, #3680a7 100%);
+                background-image: -o-linear-gradient(top, #beb1a8 0%, #3680a7 100%);
+                background-image: linear-gradient(top, #beb1a8 0%, #3680a7 100%);
+                min-height: 100%;
+            }
+            html {
+                height: 100%;
+            }
+            html, body {
+                margin: 0;
+                overflow: hidden;
+            }
+            .child {
+                display: block;
+                margin: auto;
+            }
+
+            div {
+                white-space: pre-line;
+                line-height: 25px;
+                height: auto;
+                width: auto;
+                text-shadow: 2px 2px 2px gray;
+            }
+
+            .smalldiv {
+                margin-top: 30px;
+            }
+            .largediv {
+                margin-top: 50px;
+            }
+            .hugediv {
+                margin-top: 200px;
+            }
+
+            button, textarea {
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            button {
+                border: none;
+                background-color: #624645;
+                color: white;
+                border-radius: 20px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            textarea {
+                background-color: #3680b7;
+                color: black;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            .smallbutton {
+                padding: 5px 10px;
+                font-size: 10px;
+            }
+            button:hover {
+                background-color: #ffffff;
+                color: black;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
+            .footer {
+                position: fixed;
+                display: block;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        </style>
 
         <!-- This script's source is https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js, but in order for the website to be runnable offline it has to be saved to the webpage -->
         <script>
