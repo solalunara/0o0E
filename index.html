@@ -21,11 +21,14 @@
 
         <button class="smalldiv child" onclick="rojf()">submit</button>
 
-        <a id="downloadLink" style="display: none; margin-top: 30px">Download Next Clue</a>
+        <a class="smalldiv child" id="downloadLink" style="display: none;">Download Next Clue</a>
 
-        <div id="error" style="display: none; margin-top: 30px;"> Not A Valid Key - Please Try Again With Another Passkey </div>
+        <div class="smalldiv" id="error" style="display: none;">Not a valid key - please try again with another passkey</div>
 
-        <button class="smallbutton footer" id="localbutton" onclick="local()">For running locally, click here</button>
+        <div class="smalldiv" id="archiveerror" style="display: none;">Your local file archive has no file for the given passkey.
+                                                                        If this is unintentional you can use Ctrl+F5 to clear it</div>
+
+        <button class="smallbutton footer child" id="localbutton" onclick="local()">For running locally, click here</button>
 
         <div class="footer" style="display:none" id="localdiv"> For running locally, input encrypted files here: <input type="file" id="fileInput" accept=".enc" multiple="true"> </div>
 
@@ -150,6 +153,10 @@
                 document.getElementById( 'localbutton' ).style.display = 'none';
             }
 
+            function archiveerror() {
+                document.getElementById( 'archiveerror' ).style.display = 'block';
+            }
+
             function rojf() {
                 const fileInput = document.getElementById('fileInput');
                 const files = fileInput.files;
@@ -184,84 +191,132 @@
 
                     case -1961899739:
                     case -1045766907:
-                    case -1992437499:
+                    case -1992437499: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.mp3.enc" )
+                            if ( files[ i ].name == "0o0E.mp3.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && file0 != undefined )
                             decryptText( file0, code.toLowerCase(), "0o0E.mp3" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     case 68599:
                     case 67575:
-                    case 99351:
+                    case 99351: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.exe.enc" )
+                            if ( files[ i ].name == "0o0E.exe.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && file1 != undefined )
                             decryptText( file1, code.toLowerCase(), "0o0E.exe" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     case 1972518454:
                     case 1941980694:
-                    case -1406316010:
+                    case -1406316010: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.wav.enc" )
+                            if ( files[ i ].name == "0o0E.wav.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && file2 != undefined )
                             decryptText( file2, code.toLowerCase(), "0o0E.wav" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
 
                     case 1335273927:
                     case -173098585:
-                    case -955725401:
+                    case -955725401: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.mp4.enc" )
+                            if ( files[ i ].name == "0o0E.mp4.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && _file1 != undefined )
                             decryptText( _file1, code.toLowerCase(), "0o0E.mp4" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     case -1993889503:
                     case -2024427263:
-                    case -1077756671:
+                    case -1077756671: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.flac.enc" )
+                            if ( files[ i ].name == "0o0E.flac.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && _file2 != undefined )
                             decryptText( _file2, code.toLowerCase(), "0o0E.flac" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     case -135761730:
                     case -71117602:
-                    case 646865086:
+                    case 646865086: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.png.enc" )
+                            if ( files[ i ].name == "0o0E.png.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && _file3 != undefined )
                             decryptText( _file3, code.toLowerCase(), "0o0E.png" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     case -2038584168:
                     case -2008046408:
-                    case -1091913576:
+                    case -1091913576: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.ogg.enc" )
+                            if ( files[ i ].name == "0o0E.ogg.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && file3 != undefined )
                             decryptText( file3, code.toLowerCase(), "0o0E.ogg" );
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
                     
                     case -1395524392:
                     case 1234789624:
-                    case 1952772312:
+                    case 1952772312: {
+                        let LocalFile = false;
                         for ( let i = 0; i < files.length; ++i )
-                            if ( files[ i ].name == "0o0E.html.enc" )
+                            if ( files[ i ].name == "0o0E.html.enc" ) {
                                 decryptFile( files[ i ], code.toLowerCase() );
+                                LocalFile = true;
+                            }
                         if ( files.length == 0 && file4 != undefined )
                             decryptText( file4, code.toLowerCase(), "0o0E.html" )
+                        if ( !LocalFile && files.length != 0 )
+                            archiveerror();
                         break;
+                    }
 
                     default:
                         document.getElementById( 'error' ).style.display = 'block';
@@ -275,6 +330,7 @@
                 var DownloadLink = document.getElementById( 'downloadLink' );
                 window.URL.revokeObjectURL( DownloadLink.href );
                 DownloadLink.style.display = 'none';
+                document.getElementById( 'archiveerror' ).style.display = 'none';
             }
 
             function decryptFile( file, key ) {
